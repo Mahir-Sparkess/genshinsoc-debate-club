@@ -1,0 +1,30 @@
+body {
+  height: 100%;
+}
+
+button {
+  color: white;
+  background-color: #262626;
+  height: 5em;
+  width: 8em;
+  border: none;
+}
+
+.footer {
+  bottom: 0em;
+  margin-bottom: 3em;
+  height: 3em;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.rectangle {
+  display: block;
+  width: 5em;
+  height: 5em;
+  background-color: aqua;
+  float: left;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}

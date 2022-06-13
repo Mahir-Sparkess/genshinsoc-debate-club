@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bingo Card Generator</title>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>Debate Club</h1>
+<img src="assets/Weapon_Debate_Club_3D.png" style="width: 100px;height: 136px; display: block; margin-left: auto; margin-right: auto;">
+<br>
+  <div id="main_body" style="padding-left: 5em" class="main_body">
+    <div id="current_cat" class="cat"> </div>
+    <div id="current_cat_name"></div>
+	<h2><button id="new_cat" onclick="addACat()">Player 1</button></h2>
+  </div>
+  
+  <div id="uuhh" style="min-width: 70em; float: left">
+   <div id="prompt" style="display:block; height: 400px; color: gray; font-size: 2.2em; max-width: 32em;">
+   </div>
+ 
+	<h2 style="margin-left: auto; margin-right: auto; text-align: center"><button id="new_cat" onclick="addACatPrompt()">Prompt</button></h2>
+  </div>
+  
+ 
+ <div style="width: 100%; display: block"> 
+  <div id="main_body_2" class="main_body">
+    <div id="current_cat_2" class="cat"> </div>
+    <div id="current_cat_name_2"></div>
+	<h2><button id="new_cat" onclick="addACat2()">Player 2</button></h2>
+  </div>
+  </br>
+  <br><br>
+  
+ 
+ 
+
+  <script>
+    var called_cats = [];
+    var called_cat_names = [];
+    var random_colour;
+    
+    var colours = [
+"#749FDD", "#98d3e6", "#46ced8", "#62eaba", "#aceaa4", "#907DF0", "#C2A9DB", "#4984C4", "#00AB97", "#6c7d99", "#86b7aa", "#9ffce3", "#302ded", "#4241a3", "#595987", "#75a4af", "#b3d7e0", "#ffffff", "#cffcdc", "#9bdbae", "#48845a", "#534d7a", "#7d6ed1", "#a39ebc", "#d1b5f4"
+    ];
+    
+    var cat_names = [
+        'Venti', 'Yanfei', 'Aloy', 'Xinyan', 'Raiden_Shogun', 'Zhongli', 'Hu_Tao', 'Kamisato_Ayato', 'Beidou', 'Kujou_Sara',
+        'Xingqiu', 'Lisa', 'Diona', 'Kaedehara_Kazuha', 'Kamisato_Ayaka', 'Thoma', 'Jean', 'Bennett', 'Barbara', 'Ganyu',
+        'Klee', 'Razor', 'Albedo', 'Mona', 'Amber', 'Ningguang', 'Kaeya', 'Qiqi', 'Tartaglia', 'Chongyun', 'Xiao', 'Fischl',
+        'Shenhe', 'Yae_Miko', 'Rosaria', 'Sangonomiya_Kokomi', 'Gorou', 'Kuki_Shinobu', 'Diluc', 'Shikanoin_Heizou',
+        'Sucrose', 'Yoimiya', 'Keqing', 'Noelle', 'Arataki_Itto', 'Dainsleif', 'Sayu', 'Traveler', 'Eula', 'Yun_Jin',
+        'Yelan'
+    ];
+	
+	var prompt_cat = [
+	  "Who would make the best roommate", "Who's most likely to jump in the lake", "Who is most likely to own a body pillow", "Who would make a better body pillow",
+	  "Who would be better to introduce to your parents", "Who would win in a fight", "Who would make the better senpai", "Who would make the best harem protagonist",
+	  "Who's most likely to forget how mirrors work", "Who wouldn't thank the bus driver when they get off the bus", "Who would steal cutlery from a restaurant",
+	  "Who is most likely to use the word yeet", "Who is Most Likely to pull in a club",
+	  "Who is most Likely to make a quiz for Genshinsoc", "Who is best waifu", "Who is secretly into anime", "Who is the worst", "Who is the biggest gamer",
+	  "Who would have the most stamps on a maid cafe loyalty card", "Who's more likely to join Genshinsoc", "Who's Most likely to attend a protest",
+	  "Who is the best at DDR", "Who is most likely to be vegan", "Who preferred the original sonic movie design"
+	];
+    
+    function addACat() {
+      cat_no = Math.floor(Math.random() * cat_names.length)
+	  var cat_name = cat_names[cat_no];
+      random_colour = colours[cat_no];
+       $("#current_cat_name").html("<p>" + cat_name.replace('_', ' ') + "<p>");
+	   $("#current_cat").html('<img src="assets/'+cat_name+'.png" alt="Cat" style="width:225px;height:225px;">');
+   
+    }
+	
+	function addACat2() {
+      var cat_no = Math.floor(Math.random() * cat_names.length)
+	  var cat_name = cat_names[cat_no];
+      random_colour = colours[cat_no];
+      $("#current_cat_name_2").html("<p>" + cat_name.replace('_', ' ') + "<p>");
+	  $("#current_cat_2").html('<img src="assets/'+cat_name+'.png" alt="Cat" style="width:225px;height:225px;">');
+      
+    }
+	function addACatPrompt() {
+      var cat_no = Math.floor(Math.random() * prompt_cat.length);
+	  var cat_name = prompt_cat[cat_no];
+      $("#prompt").html("<p>" + cat_name + "<p>");
+    }
+	
+  </script>
+</body>
+
+</html>
